@@ -30,4 +30,5 @@ export {
   comuser,
   blogcom,
   comblog,
+  sequelize_sux
 };
