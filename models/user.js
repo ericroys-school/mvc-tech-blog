@@ -1,7 +1,6 @@
-import { Model, DataTypes, UUIDV4 } from "sequelize";
-import { dbConnect } from "../config/connection.js";
-import bcrypt from "bcrypt";
-
+import { Model, DataTypes, UUIDV4 } from 'sequelize';
+import { dbConnect } from '../config/connection.js';
+import bcrypt from 'bcrypt';
 
 export class User extends Model {
   isValidPassword(password) {
@@ -22,29 +21,19 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       //between 4 and 25 chars length
-      len: [4, 25]
+      len: [4, 25],
     },
-
 
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       //between 8 and 25 chars length
       validate: {
-        len: [8, 25]
-      }
-    },
-
-
-    location_id: {
-      type: DataTypes.UUID,
-      allowNull: true,
-      references: {
-        model: Location,
-        key: "id",
+        len: [8, 25],
       },
     },
   },
+
   {
     hooks: {
       beforeCreate: async (userdata) => {
@@ -64,6 +53,6 @@ User.init(
     freezeTableName: true,
     timestamps: false,
     underscored: true,
-    modelName: "user",
+    modelName: 'user',
   }
 );

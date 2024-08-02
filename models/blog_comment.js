@@ -1,5 +1,7 @@
 import { Model, DataTypes, UUIDV4 } from 'sequelize';
 import { dbConnect } from '../config/connection.js';
+import { Blog } from './blog.js';
+import { User } from './user.js';
 
 export class Blog_Comment extends Model {}
 
@@ -18,14 +20,14 @@ Blog_Comment.init(
     },
 
     user_id: {
-        type: DataTypes.UUIDV4,
+        type: DataTypes.UUID,
         references: {
             model: User,
             key: "id"
         }
     },
     blog_id: {
-        type: DataTypes.UUIDV4,
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
             model: Blog,
