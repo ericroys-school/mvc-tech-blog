@@ -1,5 +1,7 @@
-<main class='container'>
-  <h1>Sign In</h1>
+<div class="centered-form-container">
+<section class='centered-form-section'>
+
+  <h1>Register</h1>
   <p id='error-msg'></p>
   <form id='form-login'>
     <label for='username'>Username</label>
@@ -9,15 +11,15 @@
       type='text'
       placeholder='Enter a Username'
     />
-    <label for='password'>Password</label>
-    <input id='password' type='password' placeholder='Enter a password' />
+    <label for='password0'>Password</label>
+    <input id='password0' type='password' placeholder='Enter a password' />
+    <label for='password1'>Confirm Password</label>
+    <input id='password1' type='password' placeholder='Confirm password' />
 
-    <label for='confirm'>Confirm Password</label>
-    <input id='confirm' type='password' placeholder='Confirm Password' />
-
-    <button id='button-submit' class='button-submit' type='submit'>
-      <i class='fa-solid fa-door-open fa-sm'></i>
-      Submit
+    <button id='btn-login' class='button-submit' type='submit'>
+      <i class="fa-solid fa-envelope-open-text fa-sm"></i>
+      Register
     </button>
   </form>
-</main>
+</section>
+</div>

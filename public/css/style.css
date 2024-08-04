@@ -1,0 +1,179 @@
+:root {
+  /* left right margins */
+  --lrm: 1em;
+}
+
+* {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  align-items: center;
+  min-height: 75%;
+  font-size: 20px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* general styling for the form */
+form {
+  padding: var(--lrm);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 50%;
+  width: 75%;
+}
+
+/* spacing for form container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 75%; */
+}
+
+h1 {
+  margin: var(--lrm);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+  height: 600px;
+  flex-wrap: nowrap;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  line-height: 20px;
+  padding: 3px;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 120px;
+  background-color: black;
+  color: #fdf8f5;
+}
+
+.button-submit {
+  border-radius: 5px;
+  width: 75%;
+  align-self: center;
+  padding: 3px;
+}
+
+#error-msg {
+  color: red;
+}
+
+.centered-form-section {
+  /* height: 100%; */
+  margin-bottom: 0;
+  padding: 20px 10px 40px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.centered-form-section h1,
+.centered-form-section form {
+  display: flex;
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  border: 2px solid #13baf2;
+  border-radius: 20px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+/* more specific styling for the contact h1 element */
+.centered-form-section h1 {
+  background-color: #13baf2;
+  text-align: center;
+  border-bottom: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/* more specific styling for the contact form element */
+.centered-form-section form {
+  background-color: black;
+  border-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+/* more specific styling for the contact button */
+.centered-form-section button {
+  margin: 1em;
+  font-size: medium;
+  text-justify: auto;
+  align-self: center;
+}
+
+/* styling for button hover and focus to swap the black/orange */
+.centered-form-section button:hover,
+.centered-form-section button:focus {
+  background-color: #13baf2;
+  color: black;
+}
+
+/* style the labels in the contact form */
+.centered-form-section label {
+  color: white;
+  display: flex;
+  align-self: flex-start;
+  margin-top: 8px;
+  margin-left: 4px;
+  width: 100%;
+}
+
+/* style the input/text box in the contact form */
+.centered-form-section input,
+.centered-form-section textarea {
+  text-align: center;
+  margin: 4px;
+  margin-right: 4px;
+  width: 96%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+}
+.centered-form-container {
+  justify-content: center;
+  align-self: center;
+  width: 50%;
+}
+
+/* give the input a nice faded blue drop shadow */
+.centered-form-section input,
+.centered-form-section button {
+  box-shadow: 4px 4px 10px #13baf2;
+}
+
+/* color the sun and moon */
+.fa-door-open, .fa-envelope-open-text {
+    padding: 1px;
+    margin-right: 1em;
+  }
