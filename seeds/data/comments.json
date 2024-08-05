@@ -1,0 +1,18 @@
+[
+    {
+        "id": "cb9080e1-77d4-4c4f-aca1-f0f4ba287122",
+        "comment": "This is an amazing article",
+        "user_id":"9cceb803-75c6-4442-9a06-f951050452b0",
+        "blog_id": "b31fb33e-9ccf-43c6-9a9e-3a0b3db075bd",
+        "created_on":1722864132217,
+        "updated_on":1722864132217
+    },
+    {
+        "id": "cb9080e1-77d4-4c4f-aca1-f0f4ba287123",
+        "comment": "This is an amazing article",
+        "user_id":"9cceb803-75c6-4442-9a06-f951050452b0",
+        "blog_id": "b31fb33e-9ccf-43c6-9a9e-3a0b3db075bd",
+        "created_on":1722864132217,
+        "updated_on":1722864132217
+    }
+]
