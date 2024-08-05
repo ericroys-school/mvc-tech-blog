@@ -7,6 +7,9 @@
   --light: white;
   --dark: black;
 }
+.alert, .alert-danger{
+  color: red;
+}
 
 * {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -23,6 +26,7 @@ body {
   /* font-size: 20px; */
   background-color: #ffffff;
   color: #000000;
+  height: 100%;
 }
 
 /* header styling */
@@ -51,8 +55,6 @@ header h1 {
 
 /* all li display as row not column */
 header li {
-  /* color: var(--light);
-  margin-right: var(--m-rl); */
   display: inline-block;
   margin-top: var(--half-m);
   margin-bottom: var(--half-m);
@@ -63,19 +65,6 @@ header a {
   margin: var(--lrm);
 }
 
-/* general styling for the form */
-form {
-  padding: var(--lrm);
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin: 0 auto;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  height: 50%;
-  width: 75%;
-}
-
 /* spacing for form container */
 .container {
   display: flex;
@@ -84,10 +73,6 @@ form {
   align-items: center;
   /* min-height: 75%; */
 }
-
-/* h1 {
-  margin: var(--lrm);
-} */
 
 main {
   display: flex;
@@ -124,12 +109,8 @@ button {
   padding: 3px;
 }
 
-#error-msg {
-  color: red;
-}
-
 .centered-form-section {
-  /* height: 100%; */
+  align-items: center;
   margin-bottom: 0;
   padding: 20px 10px 40px 10px;
   border-radius: 10px;
@@ -137,33 +118,30 @@ button {
   flex-direction: column;
 }
 
-.centered-form-section h1,
+.centered-form-head{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  background-color: var(--seconday);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 16px;
+}
+
 .centered-form-section form {
   display: flex;
   width: 70%;
-  padding: 10px;
-  margin: 0 auto;
-  border: 2px solid #13baf2;
-  border-radius: 20px;
+  padding: 16px;
   flex-direction: column;
   flex-wrap: nowrap;
-}
-
-/* more specific styling for the contact h1 element */
-.centered-form-section h1 {
-  background-color: #13baf2;
-  text-align: center;
-  border-bottom: 0px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
 }
 
 /* more specific styling for the contact form element */
 .centered-form-section form {
   background-color: var(--dark);
   border-top: 0px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 /* more specific styling for the contact button */
@@ -190,7 +168,6 @@ button {
   display: flex;
   align-self: flex-start;
   margin-top: 8px;
-  margin-left: 4px;
   width: 100%;
 }
 
@@ -199,12 +176,13 @@ button {
 .centered-form-section textarea {
   text-align: center;
   margin: 4px;
-  margin-right: 4px;
+
   width: 96%;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #ffffff;
 }
+
 .centered-form-container {
   justify-content: center;
   align-self: center;
