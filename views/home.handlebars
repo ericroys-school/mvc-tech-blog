@@ -1,1 +1,7 @@
-<p>home</p>
+
+    <section class="card-container">
+        {{#each entries as |entry|}}
+        {{!-- {{id}} --}}
+        {{> blog-details}}
+        {{/each}}
+    </section>

@@ -1,6 +1,11 @@
 :root {
   /* left right margins */
   --lrm: 1em;
+  --m-rl: 1em;
+  --half-m: .5em;
+  --seconday: #13baf2;
+  --light: white;
+  --dark: black;
 }
 
 * {
@@ -11,14 +16,51 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  align-items: center;
-  min-height: 75%;
-  font-size: 20px;
+  /* font-size: 20px; */
   background-color: #ffffff;
   color: #000000;
+}
+
+/* header styling */
+header, .head-left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--seconday);
+  border-width: 5px 0px;
+  box-shadow: -15px 5px 70px 5px var(--dark); 
+  
+}
+.head-right{
+  background-image: linear-gradient(var(--dark), var(--light));
+  background-color: var(--dark);
+  min-height: 10%;
+}
+
+header h1 {
+  margin-top: var(--half-m);
+  margin-bottom: var(--half-m);
+}
+
+/* all li display as row not column */
+header li {
+  /* color: var(--light);
+  margin-right: var(--m-rl); */
+  display: inline-block;
+  margin-top: var(--half-m);
+  margin-bottom: var(--half-m);
+}
+
+header a {
+  color: var(--light);
+  margin: var(--lrm);
 }
 
 /* general styling for the form */
@@ -43,9 +85,9 @@ form {
   /* min-height: 75%; */
 }
 
-h1 {
+/* h1 {
   margin: var(--lrm);
-}
+} */
 
 main {
   display: flex;
@@ -98,7 +140,7 @@ button {
 .centered-form-section h1,
 .centered-form-section form {
   display: flex;
-  width: 50%;
+  width: 70%;
   padding: 10px;
   margin: 0 auto;
   border: 2px solid #13baf2;
@@ -118,7 +160,7 @@ button {
 
 /* more specific styling for the contact form element */
 .centered-form-section form {
-  background-color: black;
+  background-color: var(--dark);
   border-top: 0px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -126,6 +168,9 @@ button {
 
 /* more specific styling for the contact button */
 .centered-form-section button {
+  flex-wrap: wrap;
+  min-height: max-content;
+  height: max-content;
   margin: 1em;
   font-size: medium;
   text-justify: auto;
@@ -176,4 +221,34 @@ button {
 .fa-door-open, .fa-envelope-open-text {
     padding: 1px;
     margin-right: 1em;
+    color: white;
   }
+
+.card-header { 
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+  background-color: var(--seconday);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px;
+  padding: var(--m-rl);
+  margin: var(--m-rl);
+  margin-bottom: 0;
+}
+
+.card-content {
+  border: 1px, solid, var(--seconday);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  word-wrap: normal;
+  padding: var(--m-rl);
+  margin-left: var(--m-rl);
+  margin-right: var(--m-rl);
+}
+
+.card-container{
+  width: 75%;
+}
