@@ -7,6 +7,7 @@ import { dbConnect } from "./config/connection.js";
 import { create } from "express-handlebars";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { formatDate } from './views/helpers/utils.js'
 /*
   a work-around to sequelize not syncing relationships
   (would sync models)
@@ -35,7 +36,9 @@ app.use(express.urlencoded({ extended: true }));
 //use session store
 app.use(Session(sessionStore));
 //use handlebar stuffs
-app.engine("handlebars", create({}).engine);
+
+
+app.engine("handlebars", create({helpers: {"formatDate":formatDate}}).engine);
 app.set("view engine", "handlebars");
 //serve public folders
 app.use(express.static("public"));
