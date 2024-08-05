@@ -1,10 +1,24 @@
 import { Router } from 'express';
-
+import { Blog } from '../../../models/blog.js'
+import { User } from '../../../models/user.js';
+import { Blog_Comment } from '../../../models/blog_comment.js'
+import {responseError} from '../../util.js'
 export const homeRouter = Router();
 
 /**
  * Provides the get path for the home page render
  */
 homeRouter.get('/', async (req, res) => {
-  res.render('home');
+  try{
+    let es = await Blog.findAll({
+      include: [Blog_Comment, User]
+    });
+    let entries = es.map(i=> i.get({plain: true}))
+    console.log(JSON.stringify(entries, null, 3))
+    res.render('home', {entries});
+  }catch(err){
+    console.error(err);
+    responseError(res, err);
+    return;
+  }
 });
