@@ -2,6 +2,7 @@ import { Router } from "express";
 import { loginRouter } from "./login/index.js";
 import { homeRouter } from "./home/index.js";
 import { registerRouter } from "./register/index.js";
+import { dashRouter } from "./dashboard/index.js";
 
 /** this is the pathing for ui routes 
  *  which all start at the root /
@@ -16,3 +17,5 @@ uiRoutes.use("/home", homeRouter);
 uiRoutes.use("/", homeRouter);
 // path for registration
 uiRoutes.use("/register", registerRouter);
+// path for dashboard
+uiRoutes.use("/dashboard", dashRouter);

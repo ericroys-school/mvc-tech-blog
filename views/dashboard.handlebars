@@ -1,1 +1,5 @@
-<p>Dashboard</p>
+<section class="card-container">
+    {{#each entries as |entry|}}
+    {{> blog-details}}
+    {{/each}}
+</section>
