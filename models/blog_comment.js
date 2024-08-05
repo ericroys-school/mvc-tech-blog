@@ -61,6 +61,6 @@ Blog_Comment.init(
     freezeTableName: true,
     timestamps: false,
     underscored: true,
-    modelName: 'blog',
+    modelName: 'blog_comment',
   }
 );
