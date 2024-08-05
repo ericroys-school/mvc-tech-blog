@@ -239,16 +239,25 @@ button {
 }
 
 .card-content {
-  border: 1px, solid, var(--seconday);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
+  width: 90%;
+  background-color: var(--light);
   word-wrap: normal;
   padding: var(--m-rl);
-  margin-left: var(--m-rl);
-  margin-right: var(--m-rl);
+  margin: 4px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
+.card-content-wrapper{
+  display: flex;
+  background-color: var(--dark);
+  border: 1px, solid, var(--seconday);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: var(--m-rl);
+  margin-right: var(--m-rl);
+  justify-content: center;
+}
 .card-container{
   width: 75%;
 }
