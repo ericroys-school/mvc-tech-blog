@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { Blog } from '../../../models/blog.js'
 import { User } from '../../../models/user.js';
 import { Blog_Comment } from '../../../models/blog_comment.js'
-import {responseError} from '../../util.js'
+import { getSessionVars } from '../../auth/util.js';
 export const homeRouter = Router();
 
 /**
@@ -14,11 +14,10 @@ homeRouter.get('/', async (req, res) => {
       include: [Blog_Comment, User]
     });
     let entries = es.map(i=> i.get({plain: true}))
-    console.log(JSON.stringify(entries, null, 3))
-    res.render('home', {entries});
+    // console.log(JSON.stringify(entries, null, 3))
+    res.render('home', {entries, ...getSessionVars(req)});
   }catch(err){
     console.error(err);
-    responseError(res, err);
-    return;
+    res.render("error", err)
   }
 });
