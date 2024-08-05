@@ -1,23 +1,26 @@
-<div class="centered-form-container">
-<section class='centered-form-section'>
+<div class='centered-form-container'>
+  <section class='centered-form-section'>
+    <div class="centered-form-head">
+    <h1>Sign In</h1>
+    <p id='error-msg'></p>
+    </div>
 
-  <h1>Sign In</h1>
-  <p id='error-msg'></p>
-  <form id='form-login'>
-    <label for='username'>Username</label>
-    <input
-      id='username'
-      autocomplete='username'
-      type='text'
-      placeholder='Enter a Username'
-    />
-    <label for='password'>Password</label>
-    <input id='password' type='password' placeholder='Enter a password' />
+    <form id='form-login'>
+      <label for='username'>Username</label>
+      <input
+        id='username'
+        autocomplete='username'
+        type='text'
+        placeholder='Enter a Username'
+      />
+      <label for='password'>Password</label>
+      <input id='password' type='password' placeholder='Enter a password' />
 
-    <button id='btn-login' class='button-submit' type='submit'>
-      <i class='fa-solid fa-door-open fa-sm'></i>
-      Log In
-    </button>
-  </form>
-</section>
+      <button id='btn-login' class='button-submit' type='submit'>
+        <i class='fa-solid fa-door-open fa-sm'></i>
+        Log In
+      </button>
+    </form>
+  </section>
 </div>
+<script type='module' src='/scripts/login.js'></script>
