@@ -17,17 +17,12 @@
   padding: 0;
 }
 
-body {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+/* body {
   position: relative;
-  /* font-size: 20px; */
   background-color: #ffffff;
   color: #000000;
   height: 100%;
-}
+} */
 
 /* header styling */
 header{
@@ -85,8 +80,8 @@ header a {
 main {
   display: flex;
   justify-content: center;
-  margin-top: 0.5em;
-  height: 600px;
+  margin-top: 1em;
+  /* height: 600px; */
   flex-wrap: nowrap;
 }
 
@@ -102,12 +97,8 @@ label {
 }
 
 button {
-  height: 35px;
-  margin-top: 10px;
-  border-radius: 10px;
-  width: 120px;
-  background-color: black;
-  color: #fdf8f5;
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 .button-submit {
@@ -144,7 +135,7 @@ button {
   flex-wrap: nowrap;
 }
 
-/* more specific styling for the contact form element */
+/* more specific styling for the section form */
 .centered-form-section form {
   background-color: var(--dark);
   border-top: 0px;
@@ -156,11 +147,8 @@ button {
 .centered-form-section button,
 #btn-add {
   flex-wrap: wrap;
-  /* min-height: max-content;
-  height: max-content; */
   margin: 1em;
   font-size: medium;
-  /* text-justify: auto; */
   align-self: center;
 }
 
@@ -174,13 +162,13 @@ button {
 .centered-form-section button:hover,
 .centered-form-section button:focus,
 #btn-add:hover, #btn-add:focus {
-  background-color: #13baf2;
-  color: black;
+  background-color: var(--seconday);
+  color: var(--dark);
 }
 
 /* style the labels in the contact form */
 .centered-form-section label {
-  color: white;
+  color: var(--light);
   display: flex;
   align-self: flex-start;
   margin-top: 8px;
@@ -196,7 +184,7 @@ button {
   width: 96%;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--light);
 }
 
 .centered-form-section textarea {
@@ -216,14 +204,12 @@ button {
 #btn-add,
 #btn-editBlog,
 #btn-createBlog {
-  box-shadow: 4px 4px 10px #13baf2;
+  box-shadow: 4px 4px 10px var(--seconday);
 }
 
 /* color the sun and moon */
 .fa-door-open, .fa-envelope-open-text {
-    /* padding: 1px;
-    margin-right: 1em; */
-    color: white;
+    color: var(--light);
   }
 
 .card-header { 
