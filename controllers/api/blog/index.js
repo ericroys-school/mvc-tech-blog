@@ -27,3 +27,44 @@ blogRouter.post('/', async (req, res) => {
     responseError(res, err);
   }
 });
+
+blogRouter.put("/:id", async (req, res)=> {
+  if (!req.session || !req.session.isLoggedIn || !req.session.uid) {
+    responseUnauthorized(res);
+    return;
+  }
+  if (!req.body) responseUserError(res, 'No body provided');
+  let { title, content } = req.body;
+
+  try{
+    let blog = await Blog.update(
+      {title:title, text:content},{
+      where: {
+        id: req.params.id
+      }
+    });
+    res.status(200).json();
+  }catch(err){
+    console.error(err);
+    responseError(res, JSON.stringify(err))
+  }
+})
+
+blogRouter.delete("/:id", async (req, res)=> {
+  if (!req.session || !req.session.isLoggedIn || !req.session.uid) {
+    responseUnauthorized(res);
+    return;
+  }
+  try{
+    let exists = await Blog.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    res.status(200).json()
+
+  }catch(err){
+    console.error(err);
+    responseError(res, JSON.stringify(err))
+  }
+})

@@ -4,7 +4,7 @@ import { User } from '../../../models/user.js';
 import { Blog_Comment } from '../../../models/blog_comment.js'
 import { getSessionVars } from '../../auth/util.js';
 export const homeRouter = Router();
-
+const pageTitle = "Just Another Tech Blog"
 /**
  * Provides the get path for the home page render
  */
@@ -15,7 +15,7 @@ homeRouter.get('/', async (req, res) => {
     });
     let entries = es.map(i=> i.get({plain: true}))
     // console.log(JSON.stringify(entries, null, 3))
-    res.render('home', {entries, ...getSessionVars(req)});
+    res.render('home', {entries, pageTitle, ...getSessionVars(req)});
   }catch(err){
     console.error(err);
     res.render("error", err)

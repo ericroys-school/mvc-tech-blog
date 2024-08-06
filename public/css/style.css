@@ -199,6 +199,10 @@ button {
   border: 1px solid #ffffff;
 }
 
+.centered-form-section textarea {
+  height: auto;
+}
+
 .centered-form-container {
   justify-content: center;
   align-self: center;
@@ -208,7 +212,10 @@ button {
 /* give the input a nice faded blue drop shadow */
 .centered-form-section input,
 .centered-form-section button,
-#btn-add {
+.centered-form-section textarea,
+#btn-add,
+#btn-editBlog,
+#btn-createBlog {
   box-shadow: 4px 4px 10px #13baf2;
 }
 

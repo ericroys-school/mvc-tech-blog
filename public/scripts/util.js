@@ -18,6 +18,18 @@ export function getValue(id) {
   return getElement(id).value;
 }
 
+/**
+ * 
+ * @param String id element id
+ * @param String attr - name of the attribute to retrieve
+ * @returns 
+ */
+export function getAttr(id, attr){
+  if(!id || !attr) throw "Id and attr are required"
+  let e = getElement(id);
+  return e.getAttribute(attr)
+}
+
 function setText(msg, style){
   let err = getElement('error-msg');
   err.innerHTML = msg;

@@ -1,0 +1,29 @@
+<div class='centered-form-container'>
+  <section class='centered-form-section'>
+    <div class='centered-form-head'>
+      <h1>Edit Article</h1>
+      <p id='error-msg'></p>
+    </div>
+    <form id='blog-edit'>
+      <label for='title'>Title</label>
+      <input id='title' type='text' placeholder='Enter a Title' value="{{blog.title}}"/>
+      <label for='content'>Content</label>
+      <textarea
+        id='content'
+        rows='10'
+        placeholder='Blog content here'
+        
+      >{{blog.text}}</textarea>
+
+      <button data-id="{{blog.id}}" id='btn-editBlog' class='button-submit' type='submit'>
+        <i class='fa-solid fa-pen-to-square fa-sm'></i>
+        Save
+      </button>
+      <button data-id="{{blog.id}}" id='btn-deleteBlog' class='button-submit' type='submit'>
+        <i class='fa-solid fa-trash fa-sm'></i>
+        Delete
+      </button>
+    </form>
+  </section>
+</div>
+<script type='module' src='/scripts/editblog.js'></script>
