@@ -27,3 +27,17 @@ dashRouter.get("/", async (req, res) => {
         res.render("error", {message:"You must be logged in to see the dashboard"})
     }
 })
+
+dashRouter.get("/create", async (req, res) => {
+  let {uid, isLoggedIn } = getSessionVars(req); 
+  if (uid && isLoggedIn) {
+      try{
+          res.render("addblog", {...getSessionVars(req)});
+        }catch(err){
+          console.error(err)
+          res.render("error", err)
+        }
+  }else{
+      res.render("error", {message:"You must be logged in to add a new blog entry"})
+  }
+})

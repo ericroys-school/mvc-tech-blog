@@ -1,0 +1,24 @@
+<div class='centered-form-container'>
+  <section class='centered-form-section'>
+    <div class='centered-form-head'>
+      <h1>New Article</h1>
+      <p id='error-msg'></p>
+    </div>
+    <form id='blog-create'>
+      <label for='title'>Title</label>
+      <input id='title' type='text' placeholder='Enter a Title' />
+      <label for='content'>Content</label>
+      <textarea
+        id='content'
+        rows='10'
+        placeholder='Blog content here'
+      ></textarea>
+
+      <button id='btn-createBlog' class='button-submit' type='submit'>
+        <i class='fa-solid fa-file-circle-plus fa-sm'></i>
+        Create
+      </button>
+    </form>
+  </section>
+</div>
+<script type='module' src='/scripts/addblog.js'></script>

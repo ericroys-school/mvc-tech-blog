@@ -1,5 +1,11 @@
+      
 <section class="card-container">
+    <button id='btn-add' class='button-submit' type='submit'>
+        <i class="fa-solid fa-file-circle-plus fa-sm"></i>
+        New Article
+      </button>
     {{#each entries as |entry|}}
     {{> dash-details}}
     {{/each}}
 </section>
+<script type='module' src='/scripts/dashboard.js'></script>

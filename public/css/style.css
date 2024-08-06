@@ -153,19 +153,27 @@ button {
 }
 
 /* more specific styling for the contact button */
-.centered-form-section button {
+.centered-form-section button,
+#btn-add {
   flex-wrap: wrap;
-  min-height: max-content;
-  height: max-content;
+  /* min-height: max-content;
+  height: max-content; */
   margin: 1em;
   font-size: medium;
-  text-justify: auto;
+  /* text-justify: auto; */
   align-self: center;
+}
+
+#btn-add{
+  min-width: 25%;
+  width: auto;
+  height: auto;
 }
 
 /* styling for button hover and focus to swap the black/orange */
 .centered-form-section button:hover,
-.centered-form-section button:focus {
+.centered-form-section button:focus,
+#btn-add:hover, #btn-add:focus {
   background-color: #13baf2;
   color: black;
 }
@@ -184,7 +192,7 @@ button {
 .centered-form-section textarea {
   text-align: center;
   margin: 4px;
-
+  max-width: 96%;
   width: 96%;
   height: 40px;
   border-radius: 5px;
@@ -199,14 +207,15 @@ button {
 
 /* give the input a nice faded blue drop shadow */
 .centered-form-section input,
-.centered-form-section button {
+.centered-form-section button,
+#btn-add {
   box-shadow: 4px 4px 10px #13baf2;
 }
 
 /* color the sun and moon */
 .fa-door-open, .fa-envelope-open-text {
-    padding: 1px;
-    margin-right: 1em;
+    /* padding: 1px;
+    margin-right: 1em; */
     color: white;
   }
 
