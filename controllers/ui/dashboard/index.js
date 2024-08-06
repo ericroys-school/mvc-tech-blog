@@ -18,12 +18,12 @@ dashRouter.get("/", async (req, res) => {
             })
             let entries = u.map(i=> i.get({plain:true}));
             console.log(JSON.stringify(entries, null, 3))
-            res.render("dashboard", {entries, uid, isLoggedIn});
+            res.render("dashboard", {entries, ...getSessionVars(req)});
           }catch(err){
             console.error(err)
             res.render("error", err)
           }
     }else{
-        res.render("error", "You must be logged in to see the dashboard")
+        res.render("error", {message:"You must be logged in to see the dashboard"})
     }
 })
