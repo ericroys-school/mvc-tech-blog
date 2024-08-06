@@ -5,4 +5,9 @@ export const requireAuth = (req, res, next) => {
       next();
     }
   };
+
+export const getSessionVars= (req) => {
+  let {uid, isLoggedIn } = req.session || {uid: "", isLoggedIn: false};
+  return {uid, isLoggedIn}
+}
   
