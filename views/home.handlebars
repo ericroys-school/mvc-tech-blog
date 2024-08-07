@@ -1,5 +1,5 @@
 <section class="card-container">
     {{#each entries as |entry|}}
-    {{> blog-details}}
+    {{> blog-details isLoggedIn=../isLoggedIn}}
     {{/each}}
 </section>

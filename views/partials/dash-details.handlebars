@@ -1,6 +1,10 @@
 <article>
   <div class='card-header'>
+    {{#if isLoggedIn}}
     <h3><a href="/dashboard/{{id}}">{{title}}</a></h3>
+    {{else}}
+    <h3>{{title}}</h3>
+    {{/if}}
     <h6>Posted by: {{user.username}} on {{formatDate created_on}}</h6>
   </div>
   <div class='card-content-wrapper'>

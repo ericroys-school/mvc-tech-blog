@@ -5,7 +5,7 @@
         New Article
       </button>
     {{#each entries as |entry|}}
-    {{> dash-details}}
+    {{> dash-details isLoggedIn=../isLoggedIn}}
     {{/each}}
 </section>
 <script type='module' src='/scripts/dashboard.js'></script>
