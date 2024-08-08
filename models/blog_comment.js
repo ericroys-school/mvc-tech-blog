@@ -47,13 +47,15 @@ Blog_Comment.init(
   },
   {
     hooks: {
-      beforeCreate: (blogdata) => {
+      beforeValidate: (blogdata) => {
         blogdata.dataValues.created_on = new Date().getTime();
         blogdata.dataValues.updated_on = blogdata.dataValues.created_on;
+        return blogdata;
       },
 
       beforeUpdate: (data) => {
-        blogdata.dataValues.updated_on = new Date().getTime();
+        data.dataValues.updated_on = new Date().getTime();
+        return data;
       },
     },
 
