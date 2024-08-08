@@ -34,7 +34,7 @@ if((home = getElement("btn-home")))
 });
 
 let register = null;
-if((register = getElement("btn-register")))
+if((register = getElement("btn-main-register")))
   register.addEventListener("click", async (e) => {
     document.location.replace("/register");
 });

@@ -4,7 +4,7 @@
     <h1>Register</h1>
     <p id='error-msg'></p>
     </div>
-  <form id='form-login'>
+  <form id='form-register'>
     <label for='username'>Username</label>
     <input
       id='username'
@@ -17,10 +17,12 @@
     <label for='password1'>Confirm Password</label>
     <input id='password1' type='password' placeholder='Confirm password' />
 
-    <button id='btn-login' class='button-submit' type='submit'>
+    <button id='btn-register' class='button-submit' type='submit'>
       <i class="fa-solid fa-envelope-open-text fa-sm"></i>
       Register
     </button>
+    <a class="disclaimer" href="/login">** Already have an account? **</a>
   </form>
 </section>
 </div>
+<script type='module' src='/scripts/login.js'></script>

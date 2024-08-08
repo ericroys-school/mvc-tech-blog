@@ -60,3 +60,10 @@ userRouter.post("/", async (req, res) => {
     }
   });
   
+  userRouter.post("/logout", async (req, res) => {
+    if (req.session && req.session.isLoggedIn) {
+      req.session.destroy(() => {
+        res.status(204).json();
+      });
+    } else res.status(404).json();
+  });
