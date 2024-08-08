@@ -23,8 +23,8 @@ blogRouter.post('/', async (req, res) => {
     });
     res.status(201).json(a.get({ plain: true }));
   } catch (err) {
-    console.error(err);
-    responseError(res, err);
+    console.error(err.message);
+    responseError(res, err.message || err);
   }
 });
 
@@ -46,7 +46,7 @@ blogRouter.put("/:id", async (req, res)=> {
     res.status(200).json();
   }catch(err){
     console.error(err);
-    responseError(res, JSON.stringify(err))
+    responseError(res, err.message || err)
   }
 })
 
@@ -65,6 +65,6 @@ blogRouter.delete("/:id", async (req, res)=> {
 
   }catch(err){
     console.error(err);
-    responseError(res, JSON.stringify(err))
+    responseError(res, err.message || err)
   }
 })

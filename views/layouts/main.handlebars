@@ -27,13 +27,13 @@
         <nav>
           <ul>
             {{#if isLoggedIn}}
-              <li><a href='/logout'>Logout</a></li>
-              <li><a href='/dashboard'>Dashboard</a></li>
+              <li><button id="btn-logout">Log Out</button></li>
+              <li><button id="btn-dashboard">Dashboard</button></li>
             {{else}}
-              <li><a href='login'>Login</a></li>
-              <li><a href='/register'>Register</a></li>
+              <li><button id="btn-main-login">Login</button></li>
+              <li><button id="btn-register">Register</button></li>
             {{/if}}
-            <li><a href='/'>Home</a></li>
+            <li><button id="btn-home">Home</button></li>
           </ul>
         </nav>
       </div>
@@ -43,3 +43,4 @@
     </main>
   </body>
 </html>
+<script type='module' src='/scripts/main.js'></script>

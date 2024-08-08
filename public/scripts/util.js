@@ -31,6 +31,7 @@ export function getAttr(id, attr){
 }
 
 function setText(msg, style){
+  console.log(JSON.stringify(msg))
   let err = getElement('error-msg');
   err.innerHTML = msg;
   err.setAttribute('class', style);

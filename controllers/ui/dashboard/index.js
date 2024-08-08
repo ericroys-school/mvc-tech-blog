@@ -19,8 +19,8 @@ dashRouter.get("/", async (req, res) => {
               include: [User, Blog_Comment]
             })
             let entries = u.map(i=> i.get({plain:true}));
-            console.log(JSON.stringify(entries, null, 3))
-            res.render("dashboard", {entries, pageTitle, ...getSessionVars(req)});
+            console.log(JSON.stringify({entries, pageTitle, uid, isLoggedIn}, null, 3))
+            res.render("dashboard", {entries, pageTitle, uid, isLoggedIn});
           }catch(err){
             console.error(err)
             res.render("error", err)
@@ -34,7 +34,7 @@ dashRouter.get("/create", async (req, res) => {
   let {uid, isLoggedIn } = getSessionVars(req); 
   if (uid && isLoggedIn) {
       try{
-          res.render("addblog", {pageTitle, ...getSessionVars(req)});
+          res.render("addblog", {pageTitle, uid, isLoggedIn});
         }catch(err){
           console.error(err)
           res.render("error", err)
@@ -69,3 +69,4 @@ dashRouter.get("/:id", async (req, res) => {
       res.render("error", {message:"You must be logged in to add a new blog entry"})
   }
 })
+

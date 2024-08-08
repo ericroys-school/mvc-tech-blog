@@ -3,6 +3,7 @@ import { Blog } from '../../../models/blog.js'
 import { User } from '../../../models/user.js';
 import { Blog_Comment } from '../../../models/blog_comment.js'
 import { getSessionVars } from '../../auth/util.js';
+import { renderError } from '../../util.js';
 export const homeRouter = Router();
 const pageTitle = "Just Another Tech Blog"
 /**
@@ -45,6 +46,6 @@ homeRouter.get("/comment/:id", async (req, res) => {
           res.render("error", {message: JSON.stringify(err)});
         }
   }else{
-      res.render("error", {message:"You must be logged in to add a new blog entry"})
+    renderError(res, {error:"You must be logged in for this feature"})
   }
 })

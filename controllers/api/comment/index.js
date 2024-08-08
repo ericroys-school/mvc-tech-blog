@@ -21,6 +21,6 @@ commRouter.post('/', async (req, res) => {
     res.status(201).json(a.get({ plain: true }));
   } catch (err) {
     console.error(err);
-    responseError(res, err);
+    responseError(res, err.message || err);
   }
 });

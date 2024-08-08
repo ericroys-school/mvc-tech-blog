@@ -25,7 +25,7 @@ userRouter.post("/", async (req, res) => {
       console.error(err);
       err.errors && err.errors.length > 0
         ? responseUserError(res, err.errors[0].message)
-        : responseError(res, err);
+        : responseError(res, err.message || err);
     }
   });
   
@@ -56,14 +56,7 @@ userRouter.post("/", async (req, res) => {
       }
     } catch (err) {
       console.error(err)
-      responseError(res, err);
+      responseError(res, err.message || err);
     }
   });
   
-  userRouter.post("/logout", async (req, res) => {
-    if (req.session && req.session.isLoggedIn) {
-      req.session.destroy(() => {
-        res.status(204).json();
-      });
-    } else res.status(404).json();
-  });

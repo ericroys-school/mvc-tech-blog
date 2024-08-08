@@ -290,5 +290,14 @@ nav a:hover, nav a:active {
   text-align: left;
   text-justify: distribute; */
   width: 100%;
+}
 
+.error-container{
+  position: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.error-container *{
+  margin-bottom: var(--lrm);
 }
