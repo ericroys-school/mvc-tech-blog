@@ -23,6 +23,7 @@ homeRouter.get('/', async (req, res) => {
   }
 });
 
+//route to add a comment to a specific blog
 homeRouter.get("/comment/:id", async (req, res) => {
   let {uid, isLoggedIn } = getSessionVars(req); 
   if (uid && isLoggedIn) {
@@ -39,7 +40,6 @@ homeRouter.get("/comment/:id", async (req, res) => {
             return;
           }
           let blog = b.get({plain: true})
-          console.log(JSON.stringify({uid, isLoggedIn, pageTitle, blog}))
         res.render("addcomment", {uid, isLoggedIn, pageTitle, blog})
         }catch(err){
           console.error(err)

@@ -17,6 +17,7 @@
   <body>
     <header>
       <div class='head-left'>
+        {{!-- display the page title given by the server or use default --}}
         {{#if pageTitle }}
         <h1>[[ ... {{pageTitle}} ... ]] </h1>
         {{else}}
@@ -26,6 +27,7 @@
       <div class='head-right'>
         <nav>
           <ul>
+            {{!-- display the buttons only when appropriately logged in or not --}}
             {{#if isLoggedIn}}
               <li><button id="btn-logout">Log Out</button></li>
               <li><button id="btn-dashboard">Dashboard</button></li>
@@ -33,6 +35,7 @@
               <li><button id="btn-main-login">Login</button></li>
               <li><button id="btn-main-register">Register</button></li>
             {{/if}}
+            {{!-- this on always shows --}}
             <li><button id="btn-home">Home</button></li>
           </ul>
         </nav>

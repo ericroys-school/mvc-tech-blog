@@ -8,6 +8,10 @@ import { responseNotFound } from "../../api/util.js";
 export const dashRouter = Router();
 const pageTitle = "Dashboard"
 
+/** route for the dashboard
+ *  If logged in then paint the dashboard otherwise
+ *  direct to error
+ */
 dashRouter.get("/", async (req, res) => {
     let {uid, isLoggedIn } = getSessionVars(req); 
     if (uid && isLoggedIn) {
@@ -16,10 +20,10 @@ dashRouter.get("/", async (req, res) => {
               where: {
                 user_id: req.session.uid
               }, 
-              include: [User, Blog_Comment]
+              include: [User]
             })
             let entries = u.map(i=> i.get({plain:true}));
-            console.log(JSON.stringify({entries, pageTitle, uid, isLoggedIn}, null, 3))
+            /* pass through the sql result, page title and session vars */
             res.render("dashboard", {entries, pageTitle, uid, isLoggedIn});
           }catch(err){
             console.error(err)
@@ -30,6 +34,11 @@ dashRouter.get("/", async (req, res) => {
     }
 })
 
+/**
+ * route for creating blog (dashboard view)
+ * Again, if logged in, paint the create view otherwise
+ * paint the error
+ */
 dashRouter.get("/create", async (req, res) => {
   let {uid, isLoggedIn } = getSessionVars(req); 
   if (uid && isLoggedIn) {
@@ -44,6 +53,10 @@ dashRouter.get("/create", async (req, res) => {
   }
 })
 
+/**
+ * route to view a single blog entry (for update)
+ * Again, if logged in paint it otherwise error
+ */
 dashRouter.get("/:id", async (req, res) => {
   let {uid, isLoggedIn } = getSessionVars(req); 
   if (uid && isLoggedIn) {
@@ -59,7 +72,6 @@ dashRouter.get("/:id", async (req, res) => {
             return;
           }
           let blog = b.get({plain: true})
-          console.log(JSON.stringify({uid, isLoggedIn, pageTitle, blog}))
         res.render("editblog", {uid, isLoggedIn, pageTitle, blog})
         }catch(err){
           console.error(err)

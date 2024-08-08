@@ -8,6 +8,9 @@ import {
 
 export const blogRouter = Router();
 
+/**
+ * Create a blog if logged in or error if not
+ */
 blogRouter.post('/', async (req, res) => {
   if (!req.session || !req.session.isLoggedIn || !req.session.uid) {
     responseUnauthorized(res);
@@ -28,6 +31,9 @@ blogRouter.post('/', async (req, res) => {
   }
 });
 
+/**
+ * Update an existing blog if logged in otherwise error
+ */
 blogRouter.put("/:id", async (req, res)=> {
   if (!req.session || !req.session.isLoggedIn || !req.session.uid) {
     responseUnauthorized(res);
@@ -50,6 +56,9 @@ blogRouter.put("/:id", async (req, res)=> {
   }
 })
 
+/**
+ * Delete an existing blog if logged in otherwise error
+ */
 blogRouter.delete("/:id", async (req, res)=> {
   if (!req.session || !req.session.isLoggedIn || !req.session.uid) {
     responseUnauthorized(res);

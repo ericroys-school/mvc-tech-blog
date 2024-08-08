@@ -29,6 +29,10 @@ userRouter.post("/", async (req, res) => {
     }
   });
   
+  /**
+   * Login to the system if validated
+   * Upon login the session is populated as needed
+   */
   userRouter.post("/login", async (req, res) => {
     if (!req.body) responseUserError(res, "No body provided");
     let { username, password } = req.body;
@@ -60,6 +64,9 @@ userRouter.post("/", async (req, res) => {
     }
   });
   
+  /**
+   * Kills an existing user session
+   */
   userRouter.post("/logout", async (req, res) => {
     if (req.session && req.session.isLoggedIn) {
       req.session.destroy(() => {
