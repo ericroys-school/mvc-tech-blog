@@ -11,7 +11,7 @@ const pageTitle = "Just Another Tech Blog"
 homeRouter.get('/', async (req, res) => {
   try{
     let es = await Blog.findAll({
-      include: [Blog_Comment, User]
+      include: {all: true, nested:true}
     });
     let entries = es.map(i=> i.get({plain: true}))
     // console.log(JSON.stringify(entries, null, 3))
@@ -21,3 +21,30 @@ homeRouter.get('/', async (req, res) => {
     res.render("error", err)
   }
 });
+
+homeRouter.get("/comment/:id", async (req, res) => {
+  let {uid, isLoggedIn } = getSessionVars(req); 
+  if (uid && isLoggedIn) {
+      try{
+          let b = await Blog.findOne({
+            where: {
+              id: req.params.id
+            }, 
+            include: User
+          });
+
+          if(!b){
+            res.render("error", {message: "unable to find the item requested"})
+            return;
+          }
+          let blog = b.get({plain: true})
+          console.log(JSON.stringify({uid, isLoggedIn, pageTitle, blog}))
+        res.render("addcomment", {uid, isLoggedIn, pageTitle, blog})
+        }catch(err){
+          console.error(err)
+          res.render("error", {message: JSON.stringify(err)});
+        }
+  }else{
+      res.render("error", {message:"You must be logged in to add a new blog entry"})
+  }
+})

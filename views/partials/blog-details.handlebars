@@ -7,5 +7,8 @@
     <div class='card-content'>
       {{text}}
     </div>
+  {{#each blog_comments as |comment|}}
+  {{> comments isLoggedIn=../isLoggedIn}}
+  {{/each}}
   </div>
 </article>

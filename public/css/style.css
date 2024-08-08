@@ -11,6 +11,11 @@
   color: red;
 }
 
+article{
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin: 0;
@@ -79,7 +84,9 @@ header a {
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 1em;
   /* height: 600px; */
   flex-wrap: nowrap;
@@ -226,7 +233,7 @@ button {
   margin-bottom: 0;
 }
 
-.card-content {
+.card-content, .card-content-comment {
   width: 90%;
   background-color: var(--light);
   word-wrap: normal;
@@ -236,8 +243,13 @@ button {
   border-bottom-right-radius: 6px;
 }
 
+.card-content-comment{
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
 .card-content-wrapper{
   display: flex;
+  flex-direction: column;
   background-color: var(--dark);
   border: 1px, solid, var(--seconday);
   border-bottom-left-radius: 5px;
@@ -245,7 +257,38 @@ button {
   margin-left: var(--m-rl);
   margin-right: var(--m-rl);
   justify-content: center;
+  align-items: center;
+}
+
+#add-com-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
 }
 .card-container{
   width: 75%;
+}
+
+.card-header a {
+  color: var(--light)
+}
+.card-header a:hover, .card-header a:active {
+  color: var(--dark)
+}
+nav a:hover, nav a:active {
+  color: var(--seconday)
+}
+.button-expand-comment{
+  height: 16px;
+  color: var(--seconday);
+}
+
+#comment{
+  /* resize: none;
+  overflow: auto;
+  text-align: left;
+  text-justify: distribute; */
+  width: 100%;
+
 }

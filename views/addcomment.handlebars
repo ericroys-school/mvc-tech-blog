@@ -1,0 +1,37 @@
+<div id="add-com-wrapper">
+<article>
+  <div class='card-header'>
+    <h3>{{blog.title}}</h3>
+    <h6>Posted by: {{blog.user.username}} on {{formatDate blog.created_on}}</h6>
+  </div>
+  <div class='card-content-wrapper'>
+    <div class='card-content'>
+      {{blog.text}}
+    </div>
+  </div>
+</article>
+
+<div class='centered-form-container'>
+  <section class='centered-form-section'>
+    <div class='centered-form-head'>
+      <h1>Add Comment</h1>
+      <p id='error-msg'></p>
+    </div>
+    <form id='add-comment'>
+      <label for='content'>Content</label>
+      <textarea
+        id='content'
+        rows='10'
+        placeholder='Comment Here'
+        
+      ></textarea>
+
+      <button data-id="{{blog.id}}" id='btn-addComment' class='button-submit' type='submit'>
+        <i class='fa-solid fa-file-circle-plus fa-sm'></i>
+        Create
+      </button>
+    </form>
+  </section>
+</div>
+</div>
+<script type='module' src='/scripts/addComment.js'></script>
