@@ -2,16 +2,17 @@
   /* left right margins */
   --lrm: 1em;
   --m-rl: 1em;
-  --half-m: .5em;
+  --half-m: 0.5em;
   --seconday: #13baf2;
   --light: white;
   --dark: black;
 }
-.alert, .alert-danger{
+.alert,
+.alert-danger {
   color: red;
 }
 
-article{
+article {
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +31,7 @@ article{
 } */
 
 /* header styling */
-header{
+header {
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
@@ -39,14 +40,13 @@ header{
   align-items: center;
   background-color: var(--seconday);
   border-width: 5px 0px;
-  box-shadow: -15px 5px 70px 5px var(--dark); 
-  
+  box-shadow: -15px 5px 70px 5px var(--dark);
 }
-.head-left{
+.head-left {
   width: 100%;
   text-align: center;
 }
-.head-right{
+.head-right {
   text-align: center;
   align-content: center;
   width: 100%;
@@ -124,7 +124,7 @@ button {
   flex-direction: column;
 }
 
-.centered-form-head{
+.centered-form-head {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -159,7 +159,7 @@ button {
   align-self: center;
 }
 
-#btn-add{
+#btn-add {
   min-width: 25%;
   width: auto;
   height: auto;
@@ -168,7 +168,8 @@ button {
 /* styling for button hover and focus to swap the black/orange */
 .centered-form-section button:hover,
 .centered-form-section button:focus,
-#btn-add:hover, #btn-add:focus {
+#btn-add:hover,
+#btn-add:focus {
   background-color: var(--seconday);
   color: var(--dark);
 }
@@ -210,20 +211,22 @@ button {
 .centered-form-section textarea,
 #btn-add,
 #btn-editBlog,
-#btn-createBlog {
+#btn-createBlog, 
+li button {
   box-shadow: 4px 4px 10px var(--seconday);
 }
 
 /* color the sun and moon */
-.fa-door-open, .fa-envelope-open-text {
-    color: var(--light);
-  }
+.fa-door-open,
+.fa-envelope-open-text {
+  color: var(--light);
+}
 
-.card-header { 
+.card-header {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
   background-color: var(--seconday);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -233,7 +236,8 @@ button {
   margin-bottom: 0;
 }
 
-.card-content, .card-content-comment {
+.card-content,
+.card-content-comment {
   width: 90%;
   background-color: var(--light);
   word-wrap: normal;
@@ -243,11 +247,12 @@ button {
   border-bottom-right-radius: 6px;
 }
 
-.card-content-comment{
+.card-content-comment {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
-.card-content-wrapper{
+
+.card-content-wrapper {
   display: flex;
   flex-direction: column;
   background-color: var(--dark);
@@ -260,44 +265,47 @@ button {
   align-items: center;
 }
 
-#add-com-wrapper{
+#add-com-wrapper {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   width: 100%;
 }
-.card-container{
+
+.card-container {
   width: 75%;
 }
 
 .card-header a {
-  color: var(--light)
+  color: var(--light);
 }
-.card-header a:hover, .card-header a:active {
-  color: var(--dark)
+.card-header a:hover,
+.card-header a:active {
+  color: var(--dark);
 }
-nav a:hover, nav a:active {
-  color: var(--seconday)
-}
-.button-expand-comment{
-  height: 16px;
+li button:hover,
+li button:active {
   color: var(--seconday);
 }
 
-#comment{
-  /* resize: none;
-  overflow: auto;
-  text-align: left;
-  text-justify: distribute; */
+#comment {
   width: 100%;
 }
 
-.error-container{
+.error-container {
   position: flex;
   align-items: center;
   text-align: center;
 }
 
-.error-container *{
+.error-container * {
   margin-bottom: var(--lrm);
+}
+
+li button{
+  background-color: var(--light);
+  color: var(--dark);
+  border: 1 solid var(--light);
+  padding: 5;
+  border-radius: 5px;
 }
